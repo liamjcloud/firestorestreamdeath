@@ -1,0 +1,241 @@
+====== 1 Firestore is WAI =======
+
+2020-03-26 21:48:35.694 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Locally write mutations
+2020-03-26 21:48:35.713 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: notifyLocalViewChanges
+2020-03-26 21:48:35.731 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream sending: # com.google.firestore.v1.WriteRequest@c7031db0
+    stream_token: "\020<\031\020hB\002\201\364\265\265"
+    writes {
+      update {
+        name: "projects/firestore-listener-death/databases/(default)/documents/testclick1/ULLAW1xU2BM8UHglavlj"
+      }
+    }
+2020-03-26 21:48:38.500 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Locally write mutations
+2020-03-26 21:48:38.512 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: notifyLocalViewChanges
+2020-03-26 21:48:38.517 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream sending: # com.google.firestore.v1.WriteRequest@55ceef58
+    stream_token: "\020<\031\020hB\002\201\364\265\265"
+    writes {
+      update {
+        name: "projects/firestore-listener-death/databases/(default)/documents/deathlistener/TMr6XbnoHSyztQlpMG0t"
+      }
+    }
+
+=== 2 Firestore runs into poor networking conditions, then loses connection ===
+2020-03-26 21:48:48.501 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Locally write mutations
+2020-03-26 21:48:48.514 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: notifyLocalViewChanges
+2020-03-26 21:48:48.520 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream sending: # com.google.firestore.v1.WriteRequest@47ee0b8e
+    stream_token: "\020<\031\020hB\002\201\364\265\265"
+    writes {
+      update {
+        name: "projects/firestore-listener-death/databases/(default)/documents/deathlistener/k0AM7nrN1pxaeimpdYDk"
+      }
+    }
+2020-03-26 21:48:49.550 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream closed with status: Status{code=UNAVAILABLE, description=Keepalive failed. The connection is likely gone, cause=null}.
+2020-03-26 21:48:49.555 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Current gRPC connectivity state: IDLE
+2020-03-26 21:48:49.556 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Current gRPC connectivity state: CONNECTING
+2020-03-26 21:48:49.557 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Setting the connectivityAttemptTimer
+2020-03-26 21:48:49.558 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream is open
+2020-03-26 21:48:49.560 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream sending: # com.google.firestore.v1.WriteRequest@d5d3b341
+    database: "projects/firestore-listener-death/databases/(default)"
+2020-03-26 21:48:49.565 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Current gRPC connectivity state: TRANSIENT_FAILURE
+2020-03-26 21:48:49.565 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Clearing the connectivityAttemptTimer
+2020-03-26 21:48:49.566 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream closed with status: Status{code=UNAVAILABLE, description=null, cause=java.net.NoRouteToHostException: Host unreachable
+        at libcore.io.IoBridge.connect(IoBridge.java:138)
+        at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:142)
+        at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:390)
+        at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:230)
+        at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:212)
+        at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:436)
+        at java.net.Socket.connect(Socket.java:621)
+        at java.net.Socket.connect(Socket.java:570)
+        at java.net.Socket.<init>(Socket.java:450)
+        at java.net.Socket.<init>(Socket.java:250)
+        at javax.net.DefaultSocketFactory.createSocket(SocketFactory.java:285)
+        at io.grpc.okhttp.OkHttpClientTransport$4.run(OkHttpClientTransport.java:541)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+        at java.lang.Thread.run(Thread.java:919)
+    }.
+2020-03-26 21:48:49.566 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [ExponentialBackoff]: Backing off for 941 ms (base delay: 1000 ms, delay with jitter: 952 ms, last attempt: 11 ms ago)
+2020-03-26 21:48:50.509 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream is open
+2020-03-26 21:48:50.510 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream sending: # com.google.firestore.v1.WriteRequest@d5d3b341
+    database: "projects/firestore-listener-death/databases/(default)"
+2020-03-26 21:48:50.511 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream closed with status: Status{code=UNAVAILABLE, description=null, cause=java.net.NoRouteToHostException: Host unreachable
+        at libcore.io.IoBridge.connect(IoBridge.java:138)
+        at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:142)
+        at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:390)
+        at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:230)
+        at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:212)
+        at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:436)
+        at java.net.Socket.connect(Socket.java:621)
+        at java.net.Socket.connect(Socket.java:570)
+        at java.net.Socket.<init>(Socket.java:450)
+        at java.net.Socket.<init>(Socket.java:250)
+        at javax.net.DefaultSocketFactory.createSocket(SocketFactory.java:285)
+        at io.grpc.okhttp.OkHttpClientTransport$4.run(OkHttpClientTransport.java:541)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+        at java.lang.Thread.run(Thread.java:919)
+    }.
+2020-03-26 21:48:50.511 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [ExponentialBackoff]: Backing off for 1883 ms (base delay: 1500 ms, delay with jitter: 1886 ms, last attempt: 3 ms ago)
+2020-03-26 21:48:50.733 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Current gRPC connectivity state: CONNECTING
+2020-03-26 21:48:50.733 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Setting the connectivityAttemptTimer
+2020-03-26 21:48:50.741 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Current gRPC connectivity state: TRANSIENT_FAILURE
+2020-03-26 21:48:50.741 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Clearing the connectivityAttemptTimer
+2020-03-26 21:48:52.060 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Current gRPC connectivity state: CONNECTING
+2020-03-26 21:48:52.060 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Setting the connectivityAttemptTimer
+2020-03-26 21:48:52.068 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Current gRPC connectivity state: TRANSIENT_FAILURE
+2020-03-26 21:48:52.068 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Clearing the connectivityAttemptTimer
+2020-03-26 21:48:52.397 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream is open
+2020-03-26 21:48:52.398 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream sending: # com.google.firestore.v1.WriteRequest@d5d3b341
+    database: "projects/firestore-listener-death/databases/(default)"
+2020-03-26 21:48:52.399 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream closed with status: Status{code=UNAVAILABLE, description=null, cause=java.net.NoRouteToHostException: Host unreachable
+        at libcore.io.IoBridge.connect(IoBridge.java:138)
+        at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:142)
+        at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:390)
+        at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:230)
+        at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:212)
+        at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:436)
+        at java.net.Socket.connect(Socket.java:621)
+        at java.net.Socket.connect(Socket.java:570)
+        at java.net.Socket.<init>(Socket.java:450)
+        at java.net.Socket.<init>(Socket.java:250)
+        at javax.net.DefaultSocketFactory.createSocket(SocketFactory.java:285)
+        at io.grpc.okhttp.OkHttpClientTransport$4.run(OkHttpClientTransport.java:541)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+        at java.lang.Thread.run(Thread.java:919)
+    }.
+2020-03-26 21:48:52.399 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [ExponentialBackoff]: Backing off for 3283 ms (base delay: 2250 ms, delay with jitter: 3286 ms, last attempt: 3 ms ago)
+2020-03-26 21:48:54.891 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Current gRPC connectivity state: CONNECTING
+2020-03-26 21:48:54.891 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Setting the connectivityAttemptTimer
+2020-03-26 21:48:54.898 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Current gRPC connectivity state: TRANSIENT_FAILURE
+2020-03-26 21:48:54.898 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Clearing the connectivityAttemptTimer
+2020-03-26 21:48:55.684 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream is open
+2020-03-26 21:48:55.685 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream sending: # com.google.firestore.v1.WriteRequest@d5d3b341
+    database: "projects/firestore-listener-death/databases/(default)"
+2020-03-26 21:48:55.686 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream closed with status: Status{code=UNAVAILABLE, description=null, cause=java.net.NoRouteToHostException: Host unreachable
+        at libcore.io.IoBridge.connect(IoBridge.java:138)
+        at java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:142)
+        at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:390)
+        at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:230)
+        at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:212)
+        at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:436)
+        at java.net.Socket.connect(Socket.java:621)
+        at java.net.Socket.connect(Socket.java:570)
+        at java.net.Socket.<init>(Socket.java:450)
+        at java.net.Socket.<init>(Socket.java:250)
+        at javax.net.DefaultSocketFactory.createSocket(SocketFactory.java:285)
+        at io.grpc.okhttp.OkHttpClientTransport$4.run(OkHttpClientTransport.java:541)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+        at java.lang.Thread.run(Thread.java:919)
+    }.
+
+=== 3 When Firestore is now in perfect networking conditions ===
+
+
+2020-03-26 21:49:58.502 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Locally write mutations
+2020-03-26 21:49:58.518 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: notifyLocalViewChanges
+2020-03-26 21:49:58.593 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Locally write mutations
+2020-03-26 21:49:58.605 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: notifyLocalViewChanges
+2020-03-26 21:50:03.015 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Collect garbage
+2020-03-26 21:50:03.019 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [LruGarbageCollector]: Garbage collection skipped; Cache size 106496 is lower than threshold 104857600
+2020-03-26 21:50:07.972 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Current gRPC connectivity state: IDLE
+2020-03-26 21:50:07.987 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [RemoteStore]: Restarting streams for network reachability change.
+2020-03-26 21:50:07.987 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Performing stream teardown
+2020-03-26 21:50:07.988 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [RemoteStore]: Stopping write stream with 10 pending writes
+2020-03-26 21:50:08.033 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream is open
+2020-03-26 21:50:08.035 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream sending: # com.google.firestore.v1.WriteRequest@d5d3b341
+    database: "projects/firestore-listener-death/databases/(default)"
+2020-03-26 21:50:08.503 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Locally write mutations
+2020-03-26 21:50:08.513 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: notifyLocalViewChanges
+2020-03-26 21:50:18.505 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Locally write mutations
+2020-03-26 21:50:18.520 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: notifyLocalViewChanges
+2020-03-26 21:50:18.595 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Locally write mutations
+2020-03-26 21:50:18.605 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: notifyLocalViewChanges
+2020-03-26 21:50:28.501 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Locally write mutations
+2020-03-26 21:50:28.512 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: notifyLocalViewChanges
+2020-03-26 21:50:38.524 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Locally write mutations
+2020-03-26 21:50:38.540 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: notifyLocalViewChanges
+2020-03-26 21:50:38.596 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Locally write mutations
+2020-03-26 21:50:38.607 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: notifyLocalViewChanges
+2020-03-26 21:50:42.804 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Locally write mutations
+2020-03-26 21:50:42.901 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: notifyLocalViewChanges
+2020-03-26 21:50:46.860 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: Locally write mutations
+2020-03-26 21:50:46.889 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [Persistence]: Starting transaction: notifyLocalViewChanges
+2020-03-26 21:50:48.041 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [GrpcCallProvider]: Current gRPC connectivity state: TRANSIENT_FAILURE
+2020-03-26 21:50:48.043 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream closed with status: Status{code=UNAVAILABLE, description=Unable to resolve host firestore.googleapis.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: Unable to resolve host "firestore.googleapis.com": No address associated with hostname
+        at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:420)
+        at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:256)
+        at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:213)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+        at java.lang.Thread.run(Thread.java:919)
+     Caused by: java.net.UnknownHostException: Unable to resolve host "firestore.googleapis.com": No address associated with hostname
+        at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:156)
+        at java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:103)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1152)
+        at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:640)
+        at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:388)
+        at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:256)
+        at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:213)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+        at java.lang.Thread.run(Thread.java:919)
+     Caused by: android.system.GaiException: android_getaddrinfo failed: EAI_NODATA (No address associated with hostname)
+        at libcore.io.Linux.android_getaddrinfo(Native Method)
+        at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+        at libcore.io.BlockGuardOs.android_getaddrinfo(BlockGuardOs.java:200)
+        at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+        at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:135)
+        at java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:103)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1152)
+        at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:640)
+        at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:388)
+        at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:256)
+        at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:213)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+        at java.lang.Thread.run(Thread.java:919)
+    }.
+2020-03-26 21:50:48.045 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream is open
+2020-03-26 21:50:48.047 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream sending: # com.google.firestore.v1.WriteRequest@d5d3b341
+    database: "projects/firestore-listener-death/databases/(default)"
+2020-03-26 21:50:48.050 3395-3770/com.lbradford.firestorelistenerdeath I/Firestore: (21.4.1) [WriteStream]: (7009f78) Stream closed with status: Status{code=UNAVAILABLE, description=Unable to resolve host firestore.googleapis.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: Unable to resolve host "firestore.googleapis.com": No address associated with hostname
+        at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:420)
+        at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:256)
+        at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:213)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+        at java.lang.Thread.run(Thread.java:919)
+     Caused by: java.net.UnknownHostException: Unable to resolve host "firestore.googleapis.com": No address associated with hostname
+        at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:156)
+        at java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:103)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1152)
+        at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:640)
+        at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:388)
+        at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:256)
+        at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:213)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+        at java.lang.Thread.run(Thread.java:919)
+     Caused by: android.system.GaiException: android_getaddrinfo failed: EAI_NODATA (No address associated with hostname)
+        at libcore.io.Linux.android_getaddrinfo(Native Method)
+        at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+        at libcore.io.BlockGuardOs.android_getaddrinfo(BlockGuardOs.java:200)
+        at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+        at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:135)
+        at java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:103)
+        at java.net.InetAddress.getAllByName(InetAddress.java:1152)
+        at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:640)
+        at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:388)
+        at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:256)
+        at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:213)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+        at java.lang.Thread.run(Thread.java:919)
+    }.
